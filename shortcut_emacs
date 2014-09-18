@@ -1,0 +1,25 @@
+	M - < ou M - >				va au début ou à la fin du buffer
+	M - %						remplacement d’une string par une autre
+	M - =						compte les lines et characters de la zone selectionnée
+	C - L						centre l’écran sur le curseur
+	C - X R K					couper un rectangle
+	C - X R Y					coller un rectangle
+	C - X U						annuler la dernière action
+	C - _ ou C - /				undo
+	M - G						goto line
+	C - W						couper zone selectionnée
+	C - K						couper la ligne ou se trouve le curseur
+	M - W						copier zone selectionnée
+	C - Y						coller zone dans le kill ring
+	C - SPACE					début de la sélection
+	C - G						arrête la sélection
+
+--> recherche
+	C - S						recherche la string tapée dans le buffer après le curseur
+	C - R						recherche la string tapée dans le buffer avant le curseur
+	puis C - W					ajoute le mot suivant le curseur dans la recherche
+
+	M - ;						commente la region selectionnée
+	C - X C - S					sauvegarder le buffer
+	C - X C - ‘C’				quitter emacs
+	C - I ou M - I				tabulation
