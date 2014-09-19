@@ -11,6 +11,8 @@
 --> recherche
 	C - S						recherche la string tapée dans le buffer après le curseur
 	C - R						recherche la string tapée dans le buffer avant le curseur
+	->	puis C - S				cherche la prochaine occurence dans la suite du buffer (apres un C - S ou C - R)
+	->	puis C - R				cherche la précedente occurence dans le debut du buffer (apres un C - R ou C - S)
 	->	puis C - W				ajoute le mot suivant le curseur dans la recherche
 
 	M - =						compte les lines et characters de la zone selectionnée
