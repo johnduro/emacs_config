@@ -30,3 +30,4 @@
 	C - X C - S					sauvegarder le buffer
 	C - X C - ‘C’				quitter emacs
 	C - I ou M - I				tabulation
+	C - X C - F					ouvrir un nouveau fichier
