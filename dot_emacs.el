@@ -21,6 +21,10 @@
 ;(load "comments.el")
 ;(load "header.el")
 
+;active ibuffer qui permet de switcher plus facilement entre les buffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+
 ;plus de couleurs pour js
 ;;	URL: https://github.com/mooz/js2-mode.git
 (autoload 'js2-mode "js2-mode" nil t)

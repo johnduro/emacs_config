@@ -15,19 +15,28 @@
 	->	puis C - R				cherche la précedente occurence dans le debut du buffer (apres un C - R ou C - S)
 	->	puis C - W				ajoute le mot suivant le curseur dans la recherche
 
-	M - =						compte les lines et characters de la zone selectionnée
+--> manipulation de buffers
+	C - X C - F					ouvrir un nouveau buffer dans la même fenêtre
+	C - X C - B					permet de passer d'un buffer à l'autre, selecteur graphique
+
+--> selection
+	C - SPACE					début de la sélection
+	C - G						arrête la sélection
+
+--> copier/couper/coller
 	C - X R K					couper un rectangle
 	C - X R Y					coller un rectangle
-	C - X U						annuler la dernière action
-	C - _ ou C - /				undo
 	C - W						couper zone selectionnée
 	C - K						couper la ligne apres le curseur
 	M - W						copier zone selectionnée
 	C - Y						coller zone dans le kill ring
-	C - SPACE					début de la sélection
-	C - G						arrête la sélection
-	M - ;						commente la region selectionnée
+
+--> sauvegarder/quitter
 	C - X C - S					sauvegarder le buffer
 	C - X C - ‘C’				quitter emacs
+
+	M - =						compte les lines et characters de la zone selectionnée
+	C - X U						annuler la dernière action
+	C - _ ou C - /				undo
+	M - ;						commente la region selectionnée
 	C - I ou M - I				tabulation
-	C - X C - F					ouvrir un nouveau fichier
