@@ -24,8 +24,6 @@
 	C - G						arrête la sélection
 
 --> copier/couper/coller
-	C - X R K					couper un rectangle
-	C - X R Y					coller un rectangle
 	C - W						couper zone selectionnée
 	C - K						couper la ligne apres le curseur
 	M - W						copier zone selectionnée
@@ -34,6 +32,11 @@
 --> sauvegarder/quitter
 	C - X C - S					sauvegarder le buffer
 	C - X C - ‘C’				quitter emacs
+
+--> rectangle
+	C - X R T `string`			remplace le contenu du rectangle avec `string`
+	C - X R K					couper un rectangle
+	C - X R Y					coller un rectangle
 
 	M - =						compte les lines et characters de la zone selectionnée
 	C - X U						annuler la dernière action
