@@ -1,25 +1,37 @@
 
---> remplacement
+	M = meta key Echap et/ou Alt
+	C = control key
+
+--> Remplacement
 	M - %						remplacement d’une string par une autre avec confirmation a chaque occurence
+	->  puis 'y'					confirme le remplacement
+	->  puis 'n'					annule le remplacement
+	->  puis '!'					remplace toutes les occurences
 	M - X replace-string		remplace une string par une autre sans confirmation
 
---> deplacements
+--> Deplacements
 	M - < ou M - >				va au début ou à la fin du buffer
 	M - G						goto line
+	M - F						avance d'un mot
+	M - B						recule d'un mot
 	C - L						centre l’écran sur le curseur
 
---> recherche
+--> Recherche
 	C - S						recherche la string tapée dans le buffer après le curseur
 	C - R						recherche la string tapée dans le buffer avant le curseur
 	->	puis C - S				cherche la prochaine occurence dans la suite du buffer (apres un C - S ou C - R)
 	->	puis C - R				cherche la précedente occurence dans le debut du buffer (apres un C - R ou C - S)
 	->	puis C - W				ajoute le mot suivant le curseur dans la recherche
+	->  puis C - G				arrête la recherche et retourne au point de départ
 
---> manipulation de buffers
-	C - X C - F					ouvrir un nouveau buffer dans la même fenêtre
+--> Manipulation de buffers
+	C - X C - F					ouvrir un nouveau fichier dans un buffer supplémentaire
+	C - X C - V					ouvre un nouveau fichier et kill le buffer précédent
+	C - X I						insère un fichier à la position du curseur
+	C - X C - W					copie le buffer dans un nouveau fichier et ouvre celui-ci dans un buffer (ferme le précédent)
 	C - X C - B					permet de passer d'un buffer à l'autre, selecteur graphique
 
---> selection
+--> Selection
 	C - SPACE					début de la sélection
 	C - G						arrête la sélection
 
@@ -30,16 +42,24 @@
 	C - Y						coller zone dans le kill ring
 
 --> sauvegarder/quitter
-	C - X C - S					sauvegarder le buffer
+	C - X C - S					sauvegarder le buffer courant
+	C - X S						sauvegarde tout les buffers ouvert
 	C - X C - ‘C’				quitter emacs
 
---> rectangle
+--> Rectangle
 	C - X R T `string`			remplace le contenu du rectangle avec `string`
 	C - X R K					couper un rectangle
 	C - X R Y					coller un rectangle
+
+--> Capitalisation
+	C - X C - L					met la région en minuscule
+	C - X C - U					met la région en majuscule
+	M - U						met le mot courant en majuscule (a partir du curseur)
+	M - L						met le mot courant en minuscule (a partir du curseur)
 
 	M - =						compte les lines et characters de la zone selectionnée
 	C - X U						annuler la dernière action
 	C - _ ou C - /				undo
 	M - ;						commente la region selectionnée
 	C - I ou M - I				tabulation
+	M - 'C'						met en majuscule la première lettre du mot courant
