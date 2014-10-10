@@ -49,6 +49,12 @@
 (require 'smooth-scrolling)
 (setq smooth-scrool-margin 5)
 
+;;chargement du python mode
+;; URL: https://launchpad.net/python-mode
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
 ; Set default emacs configuration
 (set-language-environment "UTF-8")
 (setq-default font-lock-global-modes nil)
