@@ -15,6 +15,7 @@
 	M - f						avance d'un mot
 	M - b						recule d'un mot
 	C - l						centre l’écran sur le curseur
+	M - m						va au debut de l'indentation de la ligne courante
 
 --> Recherche
 	C - s						recherche la string tapée dans le buffer après le curseur
@@ -35,11 +36,13 @@
 	C - SPACE					début de la sélection
 	C - g						arrête la sélection
 
---> copier/couper/coller
+--> copier/couper/coller/supprimer
 	C - w						couper zone selectionnée
 	C - k						couper la ligne apres le curseur
 	M - w						copier zone selectionnée
 	C - y						coller zone dans le kill ring
+	M - \						supprime tous les espace avant et après le curseur
+	M - d						supprime jusqu'à la fin du mot
 
 --> sauvegarder/quitter
 	C - x C - s					sauvegarder le buffer courant
@@ -64,9 +67,12 @@
 	C - 'c' C - b				va avant la balise d'ouverture du tag courant
 	C - 'c' /					insère une balise de fermeture pour le tag le plus proche non fermé
 
+--> Miscellaneous
 	M - =						compte les lines et characters de la zone selectionnée
 	C - x u						annuler la dernière action
 	C - _ ou C - /				undo
 	M - ;						commente la region selectionnée
 	C - i ou M - i				tabulation
 	M - 'c'						met en majuscule la première lettre du mot courant
+	C - x C - t					bouge la ligne ou se trouve le curseur au dessus de la ligne la précédant
+	M - t						echange la place des mots avant et après le curseur
