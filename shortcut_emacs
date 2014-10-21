@@ -16,10 +16,13 @@
 	M - b						recule d'un mot
 	C - l						centre l’écran sur le curseur
 	M - m						va au debut de l'indentation de la ligne courante
+	M - { ou M - }				se déplace de paragraphe en paragraphe
 
 --> Recherche
 	C - s						recherche la string tapée dans le buffer après le curseur
 	C - r						recherche la string tapée dans le buffer avant le curseur
+	C - s C - s					refait la recherche précedente dans la suite du buffer
+	C - r C - r					refait la recherche précedente dans le buffer qui précède
 	->	puis C - s				cherche la prochaine occurence dans la suite du buffer (apres un C - S ou C - R)
 	->	puis C - r				cherche la précedente occurence dans le debut du buffer (apres un C - R ou C - S)
 	->	puis C - w				ajoute le mot suivant le curseur dans la recherche
@@ -32,6 +35,12 @@
 	C - x C - w					copie le buffer dans un nouveau fichier et ouvre celui-ci dans un buffer (ferme le précédent)
 	C - x C - b					permet de passer d'un buffer à l'autre, selecteur graphique
 
+--> Fenêtres multiples
+	C - x 1						revient à une seule fenêtre, celle ou se trouve le curseur
+	C - x 2						scinde l'écran en deux fenêtres horizontalement avec le même buffer
+	C - x 3						scinde l'écran en deux fenêtres verticalement avec le même buffer
+	C - x o						passe d'une fenêtre à l'autre
+
 --> Selection
 	C - SPACE					début de la sélection
 	C - g						arrête la sélection
@@ -43,6 +52,8 @@
 	C - y						coller zone dans le kill ring
 	M - \						supprime tous les espace avant et après le curseur
 	M - d						supprime jusqu'à la fin du mot
+	M - <backspace>				supprime le mot précédant
+	M - z <c>					supprime jusqu'à la prochaine occurence de <c> (<c> compris)
 
 --> sauvegarder/quitter
 	C - x C - s					sauvegarder le buffer courant
@@ -67,6 +78,32 @@
 	C - 'c' C - b				va avant la balise d'ouverture du tag courant
 	C - 'c' /					insère une balise de fermeture pour le tag le plus proche non fermé
 
+--> Bookmarks
+	C - x r m <enter>			Pose un bookmark à l'endroit ou se trouve le point
+	C - x r m <nom><enter>		Pose un bookmark à l'endroit ou se trouve le point et lui donne un nom
+	M - x bookmark-delete <nom>	Détruit le bookmark <nom>
+	C - x r b <nom>				Va au bookmark <nom>
+	C - x r l					Liste tous les bookmark dans un autre buffer
+	M - x bookmark-file			sauve les bookmarks
+
+--> Dired (gestion de répertoire après ouverture de celui-ci avec emacs)
+	v							ouvre le fichier où se trouve le curseur en lecture seule
+	-> puis q					quitte le fichier ouvert en lecture seule
+	e ou <enter>				ouvre le fichier où se trouve le curseur
+	R							renomme le fichier
+	'C'							copie le fichier
+	d							marque le fichier pour effacement
+	~							marque tous les fichiers de backup pour effacement
+	#							marque tous les fichiers d'autosave pour effacement
+	u							enleve la marque d'effacement du fichier
+	+							créer un répertoire
+	M							change les droits d'accès (chmod)
+	G							change le groupe (chgrp)
+	O							change le propriétaire du fichier (chown)
+	S							Fais un lien symbolique vers le fichier
+	H							Fais un lien dur vers le fichier
+	Z							compresse ou decompresse un fichier avec gunzip
+
 --> Miscellaneous
 	M - =						compte les lines et characters de la zone selectionnée
 	C - x u						annuler la dernière action
@@ -76,3 +113,14 @@
 	M - 'c'						met en majuscule la première lettre du mot courant
 	C - x C - t					bouge la ligne ou se trouve le curseur au dessus de la ligne la précédant
 	M - t						echange la place des mots avant et après le curseur
+	M - x linum-mode			active ou désactive les numéros de lignes
+	C - x l						compte le nombre de ligne en indiquant la ligne ou se trouve le curseur
+	M - x man					ouvre un man dans une autre fenêtre, par défaut cherche le mot sur lequel est le curseur
+	C - x C - q					passe de lecture seule a lecture-édition (ou inversement)
+	M - x spook					genère une liste de mot clé special NSA
+	M - x handwrite				Transforme votre fichier texte en PostScript prêt à imprimer, avec une écriture manuscrite
+	M - x dunnet				jeu d'aventure
+	M - x gomoku				jeu de go
+	M - x doctor				docteur
+	M - `						ouvre le menu dans une autre fenêtre
+	M - x shell					lance un shell dans un nouveau buffer

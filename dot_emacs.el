@@ -142,6 +142,9 @@
 ;; nuke trailing whitespaces when writing to a file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
+;; ajout un time stamp dans les fichier si "Time-stamp: <>" est écris dans les 8 premières lignes du fichier
+(add-hook 'write-file-hooks 'time-stamp)
+
 ; Load user configuration
 (if (file-exists-p "~/.myemacs") (load-file "~/.myemacs"))
 
