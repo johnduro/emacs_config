@@ -104,6 +104,12 @@
 	H							Fais un lien dur vers le fichier
 	Z							compresse ou decompresse un fichier avec gunzip
 
+--> Mail
+	C - x m						ouvre un nouveau buffer mail
+	C - 'c' C - 'c'				envoie le mail en fermant le buffer
+	C - 'c' C - s				envoie le mail sans fermer le buffer
+	C - 'c' C - w				ajoute a la fin du buffer la signature se trouvant dans ~/.signature
+
 --> Miscellaneous
 	M - =						compte les lines et characters de la zone selectionnée
 	C - x u						annuler la dernière action
