@@ -131,3 +131,4 @@
 	M - `						ouvre le menu dans une autre fenêtre
 	M - x shell					lance un shell dans un nouveau buffer
 	M - x perl-mode				(ou autre)active le mode demandé, si le fichier est sans extension par exemple
+	M - x calculator			lance une calculatrice
