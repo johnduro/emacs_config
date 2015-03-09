@@ -119,6 +119,11 @@
 (global-set-key (kbd "<f7>") 'save-buffer)
 (global-set-key (kbd "<f8>") 'save-buffers-kill-emacs)
 
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <left>") 'windmove-left)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+
 ; make characters after column 80 purple
 ;;(setq whitespace-style
 ;;  (quote (face trailing tab-mark lines-tail)))

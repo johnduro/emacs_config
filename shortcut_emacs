@@ -41,6 +41,7 @@
 	C - x 3						scinde l'écran en deux fenêtres verticalement avec le même buffer
 	C - x 0						ferme la fenetre ou se trouve le curseur en gardant ouvert le buffer
 	C - x o						passe d'une fenêtre à l'autre
+	C - c <fleches>				passe d'une fenetre a l'autre en suivant la direction des fleches
 	M - x kill-window			ferme la fenetre ou se trouve le curseur et ferme le buffer
 
 --> Selection
