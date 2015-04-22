@@ -41,7 +41,8 @@
 	C - x 3						scinde l'écran en deux fenêtres verticalement avec le même buffer
 	C - x 0						ferme la fenetre ou se trouve le curseur en gardant ouvert le buffer
 	C - x o						passe d'une fenêtre à l'autre
-	C - c <fleches>				passe d'une fenetre a l'autre en suivant la direction des fleches
+	C - x <fleches>				passe d'une fenetre a l'autre en suivant la direction des fleches
+	C - x '+'					egalise la taille des fenetres
 	M - x kill-window			ferme la fenetre ou se trouve le curseur et ferme le buffer
 
 --> Selection
@@ -67,6 +68,8 @@
 	C - x r t `string`			remplace le contenu du rectangle avec `string`
 	C - x r k					couper un rectangle
 	C - x r y					coller un rectangle
+	C - x r o					pousse le texte a droite du rectangle
+	C - x r c					blank un rectangle
 
 --> Capitalisation
 	C - x C - l					met la région en minuscule
@@ -113,6 +116,12 @@
 	C - 'c' C - s				envoie le mail sans fermer le buffer
 	C - 'c' C - w				ajoute a la fin du buffer la signature se trouvant dans ~/.signature
 
+--> Shells
+	M - x shell					lance un shell dans un nouveau buffer
+	M - !						execute une commande du shell (dans le mini buffer)
+	M - &						execute une commande du shell de facon asynchrone (resultat dans une fenetre a part)
+	M - |						execute une commande shell sur la region selectionne
+
 --> Miscellaneous
 	M - =						compte les lines et characters de la zone selectionnée
 	C - x u						annuler la dernière action
@@ -132,6 +141,5 @@
 	M - x gomoku				jeu de go
 	M - x doctor				docteur
 	M - `						ouvre le menu dans une autre fenêtre
-	M - x shell					lance un shell dans un nouveau buffer
 	M - x perl-mode				(ou autre)active le mode demandé, si le fichier est sans extension par exemple
 	M - x calculator			lance une calculatrice
