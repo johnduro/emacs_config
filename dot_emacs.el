@@ -6,20 +6,20 @@
 ;    by: thor <thor@42.fr>                           +#+  +:+       +#+         ;
 ;                                                  +#+#+#+#+#+   +#+            ;
 ;    Created: 2013/06/18 14:01:14 by thor               #+#    #+#              ;
-;    Updated: 2014/01/22 16:55:26 by mle-roy          ###   ########.fr        ;
+;    Updated: 2015/06/15 14:40:21 by mle-roy          ###   ########.fr        ;
 ;                                                                               ;
 ;*******************************************************************************;
 
 ; Load general features files
-;(setq config_files "/usr/share/emacs/site-lisp/")
-;(setq load-path (append (list nil config_files) load-path))
+(setq config_files "/usr/share/emacs/site-lisp/")
+(setq load-path (append (list nil config_files) load-path))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;(load "list.el")
-;(load "string.el")
-;(load "comments.el")
-;(load "header.el")
+(load "list.el")
+(load "string.el")
+(load "comments.el")
+(load "header.el")
 
 ;active ibuffer qui permet de switcher plus facilement entre les buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -54,6 +54,21 @@
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
+;;tuareg mode for ocaml
+;;URL : https://github.com/ocaml/tuareg
+
+(add-to-list 'load-path "~/.emacs.d/lisp/tuareg-mode")
+    (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+    (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+    (autoload 'tuareg-imenu-set-imenu "tuareg-imenu"
+      "Configuration of imenu for tuareg" t)
+    (add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+    (setq auto-mode-alist
+        (append '(("\\.ml[ily]?$" . tuareg-mode)
+	          ("\\.topml$" . tuareg-mode))
+                  auto-mode-alist))
+
 
 ; Set default emacs configuration
 (set-language-environment "UTF-8")
