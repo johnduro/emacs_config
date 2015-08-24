@@ -11,15 +11,15 @@
 ;*******************************************************************************;
 
 ; Load general features files
-(setq config_files "/usr/share/emacs/site-lisp/")
-(setq load-path (append (list nil config_files) load-path))
+;; (setq config_files "/usr/share/emacs/site-lisp/")
+;; (setq load-path (append (list nil config_files) load-path))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-(load "list.el")
-(load "string.el")
-(load "comments.el")
-(load "header.el")
+;; (load "list.el")
+;; (load "string.el")
+;; (load "comments.el")
+;; (load "header.el")
 
 ;active ibuffer qui permet de switcher plus facilement entre les buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -68,6 +68,10 @@
         (append '(("\\.ml[ily]?$" . tuareg-mode)
 	          ("\\.topml$" . tuareg-mode))
                   auto-mode-alist))
+
+;; mode for Go language
+;;URL: https://github.com/dominikh/go-mode.el
+(require 'go-mode-autoloads)
 
 
 ; Set default emacs configuration
@@ -172,3 +176,4 @@
 
 ;*******************************************************************************;
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
