@@ -128,6 +128,12 @@
 (require 'linum)             ;;affiche les lignes
 (global-linum-mode 1)
 
+
+(add-hook 'html-mode-hook
+  (lambda ()
+  ;; Default indentation is usually 2 spaces, changing to 4.
+	(set (make-local-variable 'sgml-basic-offset) 4)))
+
 ;; Raccourcis
 (global-set-key "\M-g" 'goto-line)
 ;(global-set-key "C-<home>" "\M-<")

@@ -74,7 +74,7 @@
   :type 'hook
   :group 'yaml)
 
-(defcustom yaml-indent-offset 2
+(defcustom yaml-indent-offset 4
   "*Amount of offset per level of indentation."
   :type 'integer
   :group 'yaml)
