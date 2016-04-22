@@ -42,6 +42,7 @@
 ;;; Author: Eric James Michael Ritz
 ;;; URL: https://github.com/ejmr/php-mode
 (require 'php-mode)
+(add-hook 'php-mode-hook 'php-enable-psr2-coding-style)
 
 ;;chargement du mode smooth-scrolling
 ;; Author: Adam Spiers <emacs-ss@adamspiers.org>, Jeremy Bondeson <jbondeson@gmail.com>
@@ -124,7 +125,7 @@
 
 (column-number-mode 1)       ;;affiche les numeros de ligne sur une colonne
 (line-number-mode 1)
-(global-set-key (kbd "TAB") 'self-insert-command)   ;;fait marcher tab
+;; (global-set-key (kbd "TAB") 'self-insert-command)   ;;fait marcher tab
 (require 'linum)             ;;affiche les lignes
 (global-linum-mode 1)
 
