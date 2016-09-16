@@ -21,6 +21,31 @@
 ;; (load "comments.el")
 ;; (load "header.el")
 
+;; markdown-mode
+;; URL: https://github.com/jrblevin/markdown-mode
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(autoload 'gfm-mode "markdown-mode"
+  "Major mode for editing GitHub Flavored Markdown files" t)
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
+;; csv mode
+(require 'csv-mode)
+
+;; mode for twig
+(require 'twig-mode)
+(add-hook 'twig-mode-hook
+		  (lambda()
+			(setq sgml-basic-offset 4)
+			(setq indent-tabs-mode nil)))
+;; (add-hook 'twig-mode-hook
+;; 		  (lambda ()
+;; 			;; Default indentation is usually 2 spaces, changing to 4.
+;; 			(set (make-local-variable 'sgml-basic-offset) 4)))
+
 ;active ibuffer qui permet de switcher plus facilement entre les buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
@@ -50,14 +75,14 @@
 (require 'smooth-scrolling)
 (setq smooth-scrool-margin 5)
 
-;;chargement du python mode
+;; chargement du python mode
 ;; URL: https://launchpad.net/python-mode
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-;;tuareg mode for ocaml
-;;URL : https://github.com/ocaml/tuareg
+;; tuareg mode for ocaml
+;; URL: https://github.com/ocaml/tuareg
 
 (add-to-list 'load-path "~/.emacs.d/lisp/tuareg-mode")
     (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
@@ -71,8 +96,19 @@
                   auto-mode-alist))
 
 ;; mode for Go language
-;;URL: https://github.com/dominikh/go-mode.el
+;; URL: https://github.com/dominikh/go-mode.el
 (require 'go-mode-autoloads)
+
+;; web-mode
+;; URL: https://github.com/fxbois/web-mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
 
 ; Set default emacs configuration
@@ -92,8 +128,11 @@
 (setq-default font-lock-maximum-decoration t)   ;;encore plus de couleur
 ;;modifie la couleur des commentaires
 (custom-set-faces
-   '(font-lock-comment-face ((t (:blod nil :foreground "red"))) t)
-)
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(font-lock-comment-face ((t (:blod nil :foreground "red")))))
 ;;couleur du curseur blanc
 (set-cursor-color "#ffffff")
 
@@ -130,10 +169,11 @@
 (global-linum-mode 1)
 
 
+;; Default indentation is usually 2 spaces, changing to 4.
 (add-hook 'html-mode-hook
-  (lambda ()
-  ;; Default indentation is usually 2 spaces, changing to 4.
-	(set (make-local-variable 'sgml-basic-offset) 4)))
+		  (lambda()
+			(setq sgml-basic-offset 4)
+			(setq indent-tabs-mode nil)))
 
 ;; Raccourcis
 (global-set-key "\M-g" 'goto-line)
@@ -199,3 +239,10 @@
 (add-to-list 'auto-mode-alist '("\\.network\\'" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("\\.link\\'" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("\\.automount\\'" . conf-unix-mode))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (wheatgrass)))
+ '(inhibit-startup-screen t))
